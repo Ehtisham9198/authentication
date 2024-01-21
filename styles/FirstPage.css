@@ -1,0 +1,30 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+  .login_box {
+    background-color: rgb(250, 252, 253);
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    padding-bottom: 50px;
+   }
+   input{
+    border-bottom: 2px rgb(167, 164, 164) solid;
+   }
+   .login_button{
+    background: linear-gradient(to right, rgb(68, 121, 236), rgb(231, 49, 204));
+    width: 100%; 
+   }
+   .button_sec{
+    background-color: rgb(240, 242, 244);
+    border-radius: 20px;
+   }
+   .button_sec:hover{
+    background: linear-gradient(to right, rgb(68, 121, 236), rgb(231, 49, 204));
+    color: rgb(254, 250, 250);
+   }
+}

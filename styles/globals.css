@@ -1,0 +1,17 @@
+/* styles/globals.css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+.nav_bar{
+  background: linear-gradient(to right,rgb(193, 144, 144),rgb(148, 206, 204));
+}
+
+}
+
+body {
+    background: linear-gradient(to right, rgb(68, 121, 236), rgb(231, 49, 204));
+  }
+
