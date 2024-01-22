@@ -105,7 +105,7 @@ const FirstPage = () => {
             )}
             {!isAcc && (
               <p className="mt-3.5 text-red-500">
-                Account is not found.{" "}
+                Account is not found. {" "}Please Sign Up
               </p>
               
             )}
