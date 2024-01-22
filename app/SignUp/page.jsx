@@ -37,7 +37,7 @@ const SignUp = () => {
             console.log("account created");
             setAlreadyacc(false);
         } else {
-            console.log("account already exists");
+            console.log("account already exists", text);
             setAlreadyacc(true);
         }
       }).finally(()=> setLoading(false));
