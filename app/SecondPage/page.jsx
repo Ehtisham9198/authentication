@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import '@styles/FirstPage.css';
 import FirstPage from '@app/FirstPage/page';
 
-const SecondPage = () => {
+const SecondPage = (props) => {
   const [loginPage, setLoginPage] = useState(false);
 
   const firstPageHandler = () => {
@@ -15,7 +15,7 @@ const SecondPage = () => {
     <div>
       {!loginPage ? (
         <div className='text-center mt-48'>
-          <h2 className='text_sec text-3xl font-bold'>Welcome to your website!</h2>
+          <h2 className='text_sec text-3xl font-bold'>Welcome to your website!{props.user}</h2>
           <br />
           <br />
           <button

@@ -9,13 +9,13 @@ export async function POST(req) {
         // User found based on email
         if (userData.password === data.pass) {
             // Passwords match, successful login
-            return new NextResponse("success",{name:userData.name});
+            return new NextResponse(JSON.stringify({status:"success",name:userData.name}));
         } else {
             // Password is incorrect
-            return new NextResponse("incorrectPassword");
+            return new NextResponse(JSON.stringify({status:"incorrectPassword"}));
         }
     } else {
         // User not found based on email
-        return new NextResponse("accountNotFound");
+        return new NextResponse(JSON.stringify({status:"accountNotFound"}));
     }
 }

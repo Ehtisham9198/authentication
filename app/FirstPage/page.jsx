@@ -13,7 +13,7 @@ const FirstPage = () => {
   const [isAcc, setisAcc] = useState(true);
   const [incorrectpass, setincorrectpass] = useState(false);
   const [showLoginPage, setshowLoginPage] = useState(true);
-
+  const[UserName, setUserName] = useState("");
   
 
 
@@ -37,17 +37,18 @@ const FirstPage = () => {
       }),
       method: "POST",
     })
-    .then((res) => res.text()) 
+    .then((res) => res.json()) 
     .then((text) => {
-        if (text=== "success") {
+        if (text.status=== "success") {
             setisAcc(true);
             setincorrectpass(false);
             setshowLoginPage(false);
+            setUserName(text.name);
     
-        } else if (text=== "accountNotFound") {
+        } else if (text.status=== "accountNotFound") {
             console.log("account not found, show sign up option");
             setisAcc(false);
-        } else if (text=== "incorrectPassword") {
+        } else if (text.status=== "incorrectPassword") {
             setincorrectpass(true);
             setisAcc(true);
         }
@@ -111,7 +112,7 @@ const FirstPage = () => {
           </div>
         </div>
       )}
-      {!showLoginPage && <SecondPage/>}
+      {!showLoginPage && <SecondPage user={UserName}/>}
     </div>
   );
 };
