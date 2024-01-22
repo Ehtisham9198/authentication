@@ -12,6 +12,7 @@ const SignUp = () => {
   const [signIn, setSignIn] = useState(false);
   const [loading, setLoading] = useState(false);
   const [Alreadyacc, setAlreadyacc] = useState(false);
+  const [signupped, setsignupped] = useState(false);
 
   const SignInHandler = () => {
     setSignIn(true);
@@ -36,9 +37,11 @@ const SignUp = () => {
         if(text === "success") {
             console.log("account created");
             setAlreadyacc(false);
+            setsignupped(true);
         } else {
             console.log("account already exists", text);
             setAlreadyacc(true);
+            setsignupped(false);
         }
       }).finally(()=> setLoading(false));
     EmailInput.current.value = "";
@@ -92,7 +95,10 @@ const SignUp = () => {
           </p>
           {Alreadyacc && <p className="mt-3.5 text-red-500">
                 Account already exist! </p>}
+          {signupped &&<p className="mt-3.5 text-red-500">
+                Account created successfull <br />Please login now</p>}
         </div>
+ 
         </div>
       )}
       </div>
