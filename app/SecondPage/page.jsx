@@ -14,8 +14,10 @@ const SecondPage = (props) => {
   return (
     <div>
       {!loginPage ? (
-        <div className='text-center mt-48'>
-          <h2 className='text_sec text-3xl font-bold'>Welcome to your website!{props.user}</h2>
+                <div className='text-center mt-48'>
+        <h1> <span className='font-bold text-4xl text-white'>Hi {props.user}</span></h1>
+
+          <h2 className='text_sec text-3xl font-bold'>Welcome to your website</h2>
           <br />
           <br />
           <button
